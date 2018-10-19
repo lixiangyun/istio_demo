@@ -21,15 +21,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_details-v1_1"
+    network_mode: "container:bookinfo_details-v1_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   details-v1-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_details-v1_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_details-v1_1"
     entrypoint:
       - su
       - istio-proxy
@@ -39,15 +39,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_ratings-v1_1"
+    network_mode: "container:bookinfo_ratings-v1_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   ratings-v1-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_ratings-v1_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_ratings-v1_1"
     entrypoint:
       - su
       - istio-proxy
@@ -55,7 +55,7 @@ services:
       - "/usr/local/bin/pilot-agent proxy --serviceregistry Consul --serviceCluster ratings-v1 --zipkinAddress zipkin:9411 --configPath /var/lib/istio >/tmp/envoy.log"
   ratings-v1-ubuntu:
     image: linimbus/ubuntu-tools:latest
-    network_mode: "container:consul_ratings-v1_1"
+    network_mode: "container:bookinfo_ratings-v1_1"
     privileged: true
     entrypoint:
       - "/root/hold_on.sh"
@@ -63,15 +63,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_productpage-v1_1"
+    network_mode: "container:bookinfo_productpage-v1_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   productpage-v1-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_productpage-v1_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_productpage-v1_1"
     entrypoint:
       - su
       - istio-proxy
@@ -79,7 +79,7 @@ services:
       - "/usr/local/bin/pilot-agent proxy --serviceregistry Consul --serviceCluster productpage-v1 --zipkinAddress zipkin:9411 --configPath /var/lib/istio >/tmp/envoy.log"
   productpage-v1-ubuntu:
     image: linimbus/ubuntu-tools:latest
-    network_mode: "container:consul_productpage-v1_1"
+    network_mode: "container:bookinfo_productpage-v1_1"
     privileged: true
     entrypoint:
       - "/root/hold_on.sh"
@@ -87,15 +87,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_reviews-v1_1"
+    network_mode: "container:bookinfo_reviews-v1_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   reviews-v1-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_reviews-v1_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_reviews-v1_1"
     entrypoint:
       - su
       - istio-proxy
@@ -103,7 +103,7 @@ services:
       - "/usr/local/bin/pilot-agent proxy --serviceregistry Consul --serviceCluster reviews-v1 --zipkinAddress zipkin:9411 --configPath /var/lib/istio >/tmp/envoy.log"
   reviews-v1-ubuntu:
     image: linimbus/ubuntu-tools:latest
-    network_mode: "container:consul_reviews-v1_1"
+    network_mode: "container:bookinfo_reviews-v1_1"
     privileged: true
     entrypoint:
       - "/root/hold_on.sh"
@@ -111,15 +111,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_reviews-v2_1"
+    network_mode: "container:bookinfo_reviews-v2_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   reviews-v2-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_reviews-v2_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_reviews-v2_1"
     entrypoint:
       - su
       - istio-proxy
@@ -127,7 +127,7 @@ services:
       - "/usr/local/bin/pilot-agent proxy --serviceregistry Consul --serviceCluster reviews-v2 --zipkinAddress zipkin:9411 --configPath /var/lib/istio >/tmp/envoy.log"
   reviews-v2-ubuntu:
     image: linimbus/ubuntu-tools:latest
-    network_mode: "container:consul_reviews-v2_1"
+    network_mode: "container:bookinfo_reviews-v2_1"
     privileged: true
     entrypoint:
       - "/root/hold_on.sh"
@@ -135,15 +135,15 @@ services:
     image: docker.io/istio/proxy_init:0.7.1
     cap_add:
       - NET_ADMIN
-    network_mode: "container:consul_reviews-v3_1"
+    network_mode: "container:bookinfo_reviews-v3_1"
     command:
       - -p
       - "15001"
       - -u
       - "1337"
   reviews-v3-sidecar:
-    image: gcr.io/istio-release/proxy_debug:1.0.2
-    network_mode: "container:consul_reviews-v3_1"
+    image: docker.io/istio/proxy_debug:1.0.2
+    network_mode: "container:bookinfo_reviews-v3_1"
     entrypoint:
       - su
       - istio-proxy
@@ -151,7 +151,7 @@ services:
       - "/usr/local/bin/pilot-agent proxy --serviceregistry Consul --serviceCluster reviews-v3 --zipkinAddress zipkin:9411 --configPath /var/lib/istio >/tmp/envoy.log"
   reviews-v3-ubuntu:
     image: linimbus/ubuntu-tools:latest
-    network_mode: "container:consul_reviews-v3_1"
+    network_mode: "container:bookinfo_reviews-v3_1"
     privileged: true
     entrypoint:
       - "/root/hold_on.sh"
