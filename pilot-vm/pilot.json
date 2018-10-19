@@ -1,0 +1,232 @@
+[
+    {
+        "Id": "4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319",
+        "Created": "2018-10-18T14:35:36.603545637Z",
+        "Path": "/usr/local/bin/pilot-discovery",
+        "Args": [
+            "discovery",
+            "--httpAddr",
+            ":15007",
+            "--registries",
+            "Consul",
+            "--consulserverURL",
+            "http://consul:8500",
+            "--kubeconfig",
+            "/etc/istio/config/kubeconfig"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 32731,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2018-10-18T14:36:20.014904351Z",
+            "FinishedAt": "2018-10-18T14:35:39.431356255Z"
+        },
+        "Image": "sha256:3be7ec27d893a76ccb7c63fbd52babbaba5afc9a1eb787d5779ba2bfcf6d8582",
+        "ResolvConfPath": "/var/lib/docker/containers/4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319/hostname",
+        "HostsPath": "/var/lib/docker/containers/4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319/hosts",
+        "LogPath": "/var/lib/docker/containers/4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319/4abf5fa9cbb0e135cc7226ad0b07ab2ef340f588c869300ba2e9cc6edf87c319-json.log",
+        "Name": "/consul_pilot_1",
+        "RestartCount": 0,
+        "Driver": "aufs",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/istio-1.0.2/install/consul/kubeconfig:/etc/istio/config/kubeconfig:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "consul_istiomesh",
+            "PortBindings": {
+                "15007/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8081"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "CapAdd": null,
+            "CapDrop": null,
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DiskQuota": 0,
+            "KernelMemory": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": -1,
+            "OomKillDisable": false,
+            "PidsLimit": 0,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0
+        },
+        "GraphDriver": {
+            "Name": "aufs",
+            "Data": null
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/root/istio-1.0.2/install/consul/kubeconfig",
+                "Destination": "/etc/istio/config/kubeconfig",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "4abf5fa9cbb0",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "15003/tcp": {},
+                "15005/tcp": {},
+                "15007/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "discovery",
+                "--httpAddr",
+                ":15007",
+                "--registries",
+                "Consul",
+                "--consulserverURL",
+                "http://consul:8500",
+                "--kubeconfig",
+                "/etc/istio/config/kubeconfig"
+            ],
+            "Image": "gcr.io/istio-release/pilot:1.0.2",
+            "Volumes": {
+                "/etc/istio/config/kubeconfig": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/usr/local/bin/pilot-discovery"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "5454a2ea9a46a8935f3e1563b0b064bc9e37807c181ca184963924c54ce1224c",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "consul",
+                "com.docker.compose.service": "pilot",
+                "com.docker.compose.version": "1.8.0"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "4aace9e4a3735911f104040330196fe8e1c136306ad4528cb4449c843e8046ee",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "15003/tcp": null,
+                "15005/tcp": null,
+                "15007/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8081"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/4aace9e4a373",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "consul_istiomesh": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "istio-pilot",
+                        "pilot",
+                        "4abf5fa9cbb0"
+                    ],
+                    "NetworkID": "51e4ca858eaa0ea62d63e034df255a0e135dbd0517ef505b127a036cde1e2865",
+                    "EndpointID": "6c1649b3b468bcf1d53bf1be1564d2c404ae8b79c0610d4d8867caf695b2f236",
+                    "Gateway": "172.28.0.1",
+                    "IPAddress": "172.28.0.5",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:1c:00:05"
+                }
+            }
+        }
+    }
+]
