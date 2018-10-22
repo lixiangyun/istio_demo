@@ -1,2 +1,3 @@
+#!/bin/bash
 
-./etcd -advertise-client-urls=http://0.0.0.0:2379 -listen-client-urls=http://0.0.0.0:2379
+nohup ./etcd -advertise-client-urls=http://8.1.236.123:2379 -listen-client-urls=http://8.1.236.123:2379 1>output.log 2>&1 &

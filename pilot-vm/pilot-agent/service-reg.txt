@@ -1,0 +1,59 @@
+{
+	"ID": "9d1be65bed9a:consul_productpage-v1_1:1010",
+	"Name": "productpage",
+	"Tags": ["version|v1"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
+
+{
+	"ID": "9d1be65bed9a:consul_reviews-v3_1:1010",
+	"Name": "reviews",
+	"Tags": ["version|v3"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
+
+{
+	"ID": "9d1be65bed9a:consul_details-v1_1:1010",
+	"Name": "details",
+	"Tags": ["version|v1"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
+
+{
+	"ID": "9d1be65bed9a:consul_ratings-v1_1:1010",
+	"Name": "ratings",
+	"Tags": ["version|v1"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
+
+{
+	"ID": "9d1be65bed9a:consul_reviews-v1_1:1010",
+	"Name": "reviews",
+	"Tags": ["version|v1"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
+
+{
+	"ID": "9d1be65bed9a:consul_reviews-v2_1:1010",
+	"Name": "reviews",
+	"Tags": ["version|v2"],
+	"Port": 1010,
+	"Address": "8.1.236.123",
+	"Check": null,
+	"Checks": null
+}
