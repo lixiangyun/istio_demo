@@ -1,22 +1,30 @@
-groupadd --gid 1337 istio_proxy
-useradd -u 1337 -g istio_proxy -m istio_proxy
+## 添加envoy运行的 uid 和 app 运行的uid
 
-
-# 添加envoy运行的 uid 和 app 运行的uid
-
+```
 mkdir /var/lib/istio
 useradd -m --uid 1337 istio-proxy &&  echo "istio-proxy ALL=NOPASSWD: ALL" >> /etc/sudoers && chown -R istio-proxy /var/lib/istio
 useradd -m --uid 1338 istio-proxy-app &&  echo "istio-proxy-app ALL=NOPASSWD: ALL" >> /etc/sudoers
+```
 
-
-# 指定 1338 uid 重定向到 15001 envoy代理端口
+## 指定 1338 uid 重定向到 15001 envoy代理端口
+```
 iptables -t nat -A OUTPUT -m owner --uid-owner 1338 -p tcp -j REDIRECT --to-ports 15001
+```
 
+## 添加IP与域名对应关系
+```
+echo "127.0.0.1       server.service.consul" >> /etc/hosts
+echo "127.0.0.1       client.service.consul" >> /etc/hosts
+```
 
+## 启动client
+```
+su istio-proxy-app -c "./client -addr server.service.consul:8001 -limit 1 -debug -par 1"
+```
 
+## old iptables 规则，仅供参考
 
-
-## old iptables 规则
+```
 *nat
 :PREROUTING ACCEPT [2:496]
 :INPUT ACCEPT [2:496]
@@ -39,6 +47,5 @@ iptables -t nat -A OUTPUT -m owner --uid-owner 1338 -p tcp -j REDIRECT --to-port
 -A ISTIO_OUTPUT -d 127.0.0.1/32 -m comment --comment "istio/bypass-explicit-loopback" -j RETURN
 -A ISTIO_OUTPUT -m comment --comment "istio/redirect-default-outbound" -j ISTIO_REDIRECT
 -A ISTIO_REDIRECT -p tcp -m comment --comment "istio/redirect-to-envoy-port" -j REDIRECT --to-ports 15001
-
-
+```
 
