@@ -14,6 +14,13 @@ docker exec {ubuntu-tools-container-id} /bin/bash
 iptables-save
 ```
 
+## remove
+```
+docker-compose -f bookinfo/bookinfo.sidecars.yaml down
+docker-compose -f bookinfo/bookinfo.yaml down
+docker-compose -f consul/istio.yaml down
+```
+
 ## download binary
 ```
 ./download-binary.sh
